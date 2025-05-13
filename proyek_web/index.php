@@ -139,8 +139,8 @@
 <div class="overlay" id="loginOverlay">
   <div class="custom-modal">
     <h2>Login terlebih dahulu</h2>
-    <a href="login-user.php" class="btn btn-login-normal">Login Akun Normal</a>
-    <a href="login-dev.php" class="btn btn-login-dev">Login Akun Dev</a>
+    <a href="login_user.php" class="btn btn-login-normal">Login Akun Normal</a>
+    <a href="login_admin.php" class="btn btn-login-dev">Login Akun Dev</a>
   </div>
 </div>
 
