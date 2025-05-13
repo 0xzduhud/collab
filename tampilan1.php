@@ -101,7 +101,7 @@ $realmes = [
     ],
 ];
 
-$samsungs = [
+$samsungss = [
     [
         "nama" => "Samsung A16",
         "harga" => 2799999,
