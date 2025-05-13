@@ -46,7 +46,7 @@ $result = mysqli_query($conn, $query);
             padding: 10px;
         }
         body {
-            background-color: #343a40;
+           background-image: url('assets/background.png');
         }
     </style>
 </head>
@@ -67,7 +67,6 @@ $result = mysqli_query($conn, $query);
             <button class="btn btn-outline-warning" type="submit">Search</button>
           </form>
         </li>
-        
       </ul>
     </div>
   </div>
