@@ -120,7 +120,7 @@ $result = mysqli_query($conn, $query);
             <?php while ($hp = mysqli_fetch_assoc($result)): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="assets/images/<?= htmlspecialchars($hp['gambar']) ?>" class="card-img-top" alt="<?= htmlspecialchars($hp['nama']) ?>">
+                        <img src="assets/<?= htmlspecialchars($hp['gambar']) ?>" class="card-img-top" alt="<?= htmlspecialchars($hp['nama']) ?>">
                         <div class="card-body text-center">
                             <h5 class="card-title"><?= htmlspecialchars($hp['nama']) ?></h5>
                             <p class="card-text">Rp <?= number_format($hp['harga'], 0, ',', '.') ?></p>
