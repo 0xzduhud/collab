@@ -40,7 +40,7 @@ if (isset($_POST['update'])) {
 <body class="bg-dark text-white">
 
 <div class="container my-4">
-    <h2>Dashboard Admin - CRUD Produk HP</h2>
+    <h2>Dashboard Admin</h2>
 
     <!-- Form Tambah Produk -->
     <form method="POST" class="row g-3 mb-4">
