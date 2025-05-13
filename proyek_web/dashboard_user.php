@@ -54,22 +54,23 @@ $iphones = [
     ["nama" => "Iphone 16 Pro", "harga" => 18999000, "gambar" => "iphone16pro.jpg"],
 ];
 
-// Gabungkan semua produk
 $semua_hp = array_merge($xiaomis, $oppos, $realmes, $samsungs, $vivos, $iphones);
 
 // Ambil parameter GET dan bersihkan
+$keyword = strtolower(trim($_GET['keyword'] ?? ''));
 $brand = strtolower(trim($_GET['brand'] ?? ''));
 $min_harga = filter_input(INPUT_GET, 'min_harga', FILTER_VALIDATE_INT, ['options' => ['default' => 0]]);
 $max_harga = filter_input(INPUT_GET, 'max_harga', FILTER_VALIDATE_INT, ['options' => ['default' => PHP_INT_MAX]]);
-
 $sort = $_GET['sort'] ?? '';
 
 // Filter produk
-$filtered_hp = array_filter($semua_hp, function ($hp) use ($brand, $min_harga, $max_harga) {
+$filtered_hp = array_filter($semua_hp, function ($hp) use ($brand, $min_harga, $max_harga, $keyword) {
     $matchBrand = !$brand || stripos($hp['nama'], $brand) !== false;
     $matchHarga = $hp['harga'] >= $min_harga && $hp['harga'] <= $max_harga;
-    return $matchBrand && $matchHarga;
+    $matchKeyword = !$keyword || stripos($hp['nama'], $keyword) !== false;
+    return $matchBrand && $matchHarga && $matchKeyword;
 });
+
 // Urutkan hasil jika ada pilihan sort
 if ($sort === 'asc') {
     usort($filtered_hp, fn($a, $b) => $a['harga'] <=> $b['harga']);
@@ -98,9 +99,35 @@ if ($sort === 'asc') {
 </head>
 <body class="text-white">
 
+<!-- ✅ NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container justify-content-center">
+    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+      
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold me-3" href="#">Gadget Finder</a>
+
+      <!-- Search Bar -->
+      <form class="d-flex" method="GET" action="">
+        <input class="form-control me-2" type="search" placeholder="Cari HP..." name="keyword" value="<?= htmlspecialchars($keyword) ?>">
+        <button class="btn btn-outline-warning" type="submit">Search</button>
+      </form>
+
+      <!-- Menu Links -->
+      <div class="d-flex gap-3">
+        <a class="nav-link text-white" href="filter.php">Filter</a>
+        <a class="nav-link text-white" href="dev.php">Dev</a>
+        <a class="nav-link text-white" href="login.php">Login</a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+<body class="text-white" background="background.png">
+
 <div class="container my-4">
     <h2 class="text-center">Gadget Finder</h2>
-    <form method="GET" class="row g-3 align-items-center bg-dark p-3 rounded">
+    <form method="GET" class="row g-3 align-items-center p-3 rounded">
         <div class="col-md-3">
             <label for="brand" class="form-label">Merek:</label>
             <select name="brand" id="brand" class="form-select">
