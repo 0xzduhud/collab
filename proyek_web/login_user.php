@@ -72,7 +72,7 @@ if (isset($_POST['login'])) {
             <input type="password" name="password" placeholder="Password" required><br>
             <button type="submit" name="login">Login</button>
         </form>
-        <a href="register.php" class="register-link">Belum punya akun? Daftar di sini</a>
+        <a href="register.php" class="register-link">Belum punya akun? Daftar di sini kahfjasgfui</a>
         <?php if (isset($error)) echo "<div class='error'>$error</div>"; ?>
     </div>
 
