@@ -9,7 +9,13 @@ if (isset($_POST['tambah'])) {
     $nama = $_POST['nama'];
     $harga = $_POST['harga'];
     $gambar = $_POST['gambar']; // Nama file gambar saja
-    mysqli_query($conn, "INSERT INTO produk_hp (nama, harga, gambar) VALUES ('$nama', '$harga', '$gambar')");
+    $merk = $_POST['merk'];
+    $chipset = $_POST['chipset'];
+    $ram_rom = $_POST['ram_rom'];
+    $kapasitasbatre = $_POST['kapasitasbatre'];
+    $os = $_POST['os'];
+    $ukuran_refresh = $_POST['ukuran_refresh'];
+    mysqli_query($conn, "INSERT INTO produk_hp (nama, harga, gambar, merk, chipset, ram_rom, kapasitasbatre, os, ukuran_refreshrate) VALUES ('$nama', '$harga', '$gambar' , '$merk' , '$chipset', '$ram_rom' , '$kapasitasbatre' , '$os' , '$ukuran_refresh')");
     header("Location: dashboard_admin.php");
 }
 
@@ -26,7 +32,13 @@ if (isset($_POST['update'])) {
     $nama = $_POST['nama'];
     $harga = $_POST['harga'];
     $gambar = $_POST['gambar'];
-    mysqli_query($conn, "UPDATE produk_hp SET nama='$nama', harga='$harga', gambar='$gambar' WHERE id=$id");
+    $merk = $_POST['merk'];
+    $chipset = $_POST['chipset'];
+    $ram_rom = $_POST['ram_rom'];
+    $kapasitasbatre = $_POST['kapasitasbatre'];
+    $os = $_POST['os'];
+    $ukuran_refresh = $_POST['ukuran_refresh'];
+    mysqli_query($conn, "UPDATE produk_hp SET nama='$nama', harga='$harga', gambar='$gambar', merk='$merk' , chipset='$chipset' , ram_rom='$ram_rom' , kapasitasbatre='$kapasitasbatre' , os='$os' , ukuran_refreshrate='$ukuran_refresh' WHERE id=$id");
     header("Location: dashboard_admin.php");
 }
 ?>
@@ -52,6 +64,24 @@ if (isset($_POST['update'])) {
         </div>
         <div class="col-md-3">
             <input type="text" name="gambar" class="form-control" placeholder="Nama file gambar (contoh: hp1.jpg)" required>
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="merk" class="form-control" placeholder="Merk" required>
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="chipset" class="form-control" placeholder="Chipset" required>
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="ram_rom" class="form-control" placeholder="ram/rom" required>
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="kapasitasbatre" class="form-control" placeholder="Kapasitas Batre" required>
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="os" class="form-control" placeholder="OS" required>
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="ukuran_refresh" class="form-control" placeholder="Ukuran/Refresh rate" required>
         </div>
         <div class="col-md-3">
             <button type="submit" name="tambah" class="btn btn-success w-100">Tambah</button>
