@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
         $_SESSION['user'] = $username;
-        header("Location: user_dashboard.php"); // Halaman setelah login
+        header("Location: dashboard_user.php"); // Halaman setelah login
         exit();
     } else {
         $error = "Username atau password salah!";
