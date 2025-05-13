@@ -94,18 +94,31 @@
     .custom-modal .btn:hover {
       opacity: 0.9;
     }
+
+.hero {
+  background-image: url('assets/background1.jpg'); /* Ini path dari index.php ke gambar */
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 100px 20px;
+  color: white;
+}
+
   </style>
 </head>
 <body>
 
 <!-- HERO SECTION -->
-<div class="container my-5">
-  <div class="hero">
+<div class="container my-5 hero">
+  <div class="text-center text-white">
     <h1>Bingung Mau Beli HP Apa?</h1>
     <p>Cari HP terbaik sesuai kebutuhan dan budget kamu di sini!</p>
     <button class="btn btn-warning cta-button" onclick="showOverlay()">Mulai Cari HP</button>
   </div>
 </div>
+
+
+
 
 <!-- FITUR TAMBAHAN -->
 <div class="container my-5">

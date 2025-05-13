@@ -67,9 +67,7 @@ $result = mysqli_query($conn, $query);
             <button class="btn btn-outline-warning" type="submit">Search</button>
           </form>
         </li>
-        <li class="nav-item"><a class="nav-link text-white" href="filter.php">Filter</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="dev.php">Dev</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="login.php">Login</a></li>
+        
       </ul>
     </div>
   </div>
