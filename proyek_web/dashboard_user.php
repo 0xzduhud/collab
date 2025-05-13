@@ -71,7 +71,7 @@ $filtered_hp = array_filter($semua_hp, function ($hp) use ($brand, $min_harga, $
     return $matchBrand && $matchHarga && $matchKeyword;
 });
 
-// Urutkan hasil jika ada pilihan sort
+// Urutkan hasil berdasarkan harga
 if ($sort === 'asc') {
     usort($filtered_hp, fn($a, $b) => $a['harga'] <=> $b['harga']);
 } elseif ($sort === 'desc') {
@@ -99,30 +99,50 @@ if ($sort === 'asc') {
 </head>
 <body class="text-white">
 
-<!-- ✅ NAVBAR -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container justify-content-center">
-    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
-      
-      <!-- Logo -->
-      <a class="navbar-brand fw-bold me-3" href="#">Gadget Finder</a>
+    <a class="navbar-brand fw-bold mx-auto" href="dashboard_user.php">Gadget Finder</a>
+    
+    <!-- Toggler untuk layar kecil -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Search Bar -->
-      <form class="d-flex" method="GET" action="">
-        <input class="form-control me-2" type="search" placeholder="Cari HP..." name="keyword" value="<?= htmlspecialchars($keyword) ?>">
-        <button class="btn btn-outline-warning" type="submit">Search</button>
-      </form>
+    <!-- Isi navbar yang bisa di-collapse -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 align-items-center gap-3">
 
-      <!-- Menu Links -->
-      <div class="d-flex gap-3">
-        <a class="nav-link text-white" href="filter.php">Filter</a>
-        <a class="nav-link text-white" href="dev.php">Dev</a>
-        <a class="nav-link text-white" href="login.php">Login</a>
-      </div>
+        <!-- Search -->
+        <li class="nav-item">
+          <form class="d-flex" method="GET" action="">
+            <input class="form-control me-2" type="search" placeholder="Cari HP..." name="keyword" value="<?= htmlspecialchars($keyword) ?>">
+            <button class="btn btn-outline-warning" type="submit">Search</button>
+          </form>
+        </li>
 
+        <!-- Link Filter -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href="filter.php">Filter</a>
+        </li>
+
+        <!-- Link Dev -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href="dev.php">Dev</a>
+        </li>
+
+        <!-- Link Login -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href="login.php">Login</a>
+        </li>
+      </ul>
     </div>
-  </div>
+    </div>
 </nav>
+
+
+
 <body class="text-white" background="background.png">
 
 <div class="container my-4">
