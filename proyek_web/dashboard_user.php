@@ -48,6 +48,14 @@ $result = mysqli_query($conn, $query);
         body {
            background-image: url('assets/background.png');
         }
+
+        .card {
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 <body class="text-white">
@@ -89,11 +97,11 @@ $result = mysqli_query($conn, $query);
         </div>
         <div class="col-md-3">
             <label class="form-label">Harga Minimum:</label>
-            <input type="number" name="min_harga" class="form-control" placeholder="Contoh: 1000000" value="<?= htmlspecialchars($min_harga) ?>">
+            <input type="number" name="min_harga" class="form-control" placeholder="1000000" value="<?= htmlspecialchars($min_harga) ?>">
         </div>
         <div class="col-md-3">
             <label class="form-label">Harga Maksimum:</label>
-            <input type="number" name="max_harga" class="form-control" placeholder="Contoh: 5000000" value="<?= htmlspecialchars($max_harga === PHP_INT_MAX ? '' : $max_harga) ?>">
+            <input type="number" name="max_harga" class="form-control" placeholder="5000000" value="<?= htmlspecialchars($max_harga === PHP_INT_MAX ? '' : $max_harga) ?>">
         </div>
         <div class="col-md-3">
             <label class="form-label">Urutkan Harga:</label>
