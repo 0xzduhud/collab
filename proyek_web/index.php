@@ -110,10 +110,35 @@
   margin-bottom: 15px;
 }
 
+.col-md-4 {
+    transition: 0.3s;
+}
+
+.col-md-4:hover {
+    transform: translateY(-10px);
+}
+
 
   </style>
 </head>
 <body background="assets/background.png">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Gadget Finder</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#keunggulan">Keunggulan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 <!-- HERO SECTION -->
 <div class="container my-5 hero">
@@ -129,13 +154,13 @@
 
 <!-- FITUR TAMBAHAN -->
 <div class="container my-5">
-  <h2 class="text-center mb-4">Keunggulan Gadget Finder?</h2>
+  <h2 class="text-center mb-4" id="keunggulan">Keunggulan Gadget Finder?</h2>
   <div class="row text-center">
     <div class="col-md-4 mb-4">
       <div class="bg-dark p-4 rounded">
         <img src="assets/cepat.png" alt="Cepat" class="feature-icon">
         <h5>Cepat dan Mudah</h5>
-        <p>Temukan HP idamanmu hanya dalam beberapa klik.</p><br>
+        <p>Temukan HP idamanmu hanya dalam beberapa klik.</p>
       </div>
     </div>
     <div class="col-md-4 mb-4">
@@ -154,6 +179,48 @@
     </div>
   </div>
 </div>
+
+<!-- SECTION TESTIMONI -->
+<div class="container my-5">
+  <h2 class="text-center mb-4" id="testimoni">Apa Kata Mereka?</h2>
+  <div class="row g-4 justify-content-center">
+
+    <!-- Testimoni 1 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100">
+        <img src="assets/zduhud.jpg" class="card-img-top" alt="Foto User 1" style="object-fit: cover; height: 300px;">
+        <div class="card-body">
+          <h5 class="card-title mb-0">Zduhud anjay mabar</h5>
+          <p class="card-text mt-2">"Situs ini membantu banget buat cari HP yang sesuai budget dan kebutuhan saya."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimoni 2 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100">
+        <img src="assets/kanza.jpg" class="card-img-top" alt="Foto User 2" style="object-fit: cover; height: 300px;">
+        <div class="card-body">
+          <h5 class="card-title mb-0">Kanza madagaskar</h5>
+          <p class="card-text mt-2">"Informasinya lengkap dan tampilannya mudah digunakan. Saya jadi bisa bandingin HP dengan cepat."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimoni 3 -->
+    <div class="col-md-4">
+      <div class="card bg-dark text-white h-100">
+        <img src="assets/maul.jpg" class="card-img-top" alt="Foto User 3" style="object-fit: cover; height: 300px;">
+        <div class="card-body">
+          <h5 class="card-title mb-0">Maulana Ganteng</h5>
+          <p class="card-text mt-2">"Sangat terbantu! Sekarang bisa lihat HP baru dan spesifikasinya tanpa harus keliling toko."</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- LOGIN OVERLAY -->
 <div class="overlay" id="loginOverlay">
@@ -177,6 +244,10 @@
     }
   }
 </script>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+  <p>&copy; <?= date('Y') ?> Gadget Finder. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
