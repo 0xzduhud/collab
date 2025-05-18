@@ -14,7 +14,6 @@ if (isset($_POST['login'])) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['username'] = $username;
-        //$_SESSION['user'] = $username;
         header("Location: dashboard_user.php"); // Halaman setelah login
         exit();
     } else {
