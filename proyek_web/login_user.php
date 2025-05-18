@@ -11,7 +11,10 @@ if (isset($_POST['login'])) {
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) == 1) {
-        $_SESSION['user'] = $username;
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['username'] = $username;
+        //$_SESSION['user'] = $username;
         header("Location: dashboard_user.php"); // Halaman setelah login
         exit();
     } else {
@@ -72,7 +75,7 @@ if (isset($_POST['login'])) {
             <input type="password" name="password" placeholder="Password" required><br>
             <button type="submit" name="login">Login</button>
         </form>
-        <a href="register.php" class="register-link">Belum punya akun? Daftar di sini kahfjasgfui</a>
+        <a href="register.php" class="register-link">Belum punya akun? Daftar di sini</a>
         <?php if (isset($error)) echo "<div class='error'>$error</div>"; ?>
     </div>
 

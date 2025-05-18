@@ -122,6 +122,7 @@ $result = mysqli_query($conn, $query);
                         <div class="card-body text-center">
                             <h5 class="card-title"><?= htmlspecialchars($hp['nama']) ?></h5>
                             <p class="card-text">Rp <?= number_format($hp['harga'], 0, ',', '.') ?></p>
+                            <a href="detail_hp.php?id=<?= $hp['handphone_id'] ?>" class="btn btn-primary btn-sm">Lihat Detail & Diskusi</a>
                         </div>
                     </div>
                 </div>
