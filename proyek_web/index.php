@@ -103,10 +103,17 @@
   padding: 100px 20px;
   color: white;
 }
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
 
   </style>
 </head>
-<body>
+<body background="assets/background.png">
 
 <!-- HERO SECTION -->
 <div class="container my-5 hero">
@@ -122,25 +129,25 @@
 
 <!-- FITUR TAMBAHAN -->
 <div class="container my-5">
-  <h2 class="text-center mb-4">Kenapa Memilih Gadget Finder?</h2>
+  <h2 class="text-center mb-4">Keunggulan Gadget Finder?</h2>
   <div class="row text-center">
     <div class="col-md-4 mb-4">
       <div class="bg-dark p-4 rounded">
-        <img src="icon1.png" alt="Cepat" width="50" class="mb-3">
+        <img src="assets/cepat.png" alt="Cepat" class="feature-icon">
         <h5>Cepat dan Mudah</h5>
-        <p>Temukan HP idamanmu hanya dalam beberapa klik.</p>
+        <p>Temukan HP idamanmu hanya dalam beberapa klik.</p><br>
       </div>
     </div>
     <div class="col-md-4 mb-4">
       <div class="bg-dark p-4 rounded">
-        <img src="icon2.png" alt="Lengkap" width="50" class="mb-3">
+        <img src="assets/data.jpg" alt="Lengkap" class="feature-icon">
         <h5>Data Lengkap</h5>
         <p>Berbagai merek dan harga tersedia dari yang termurah hingga premium.</p>
       </div>
     </div>
     <div class="col-md-4 mb-4">
       <div class="bg-dark p-4 rounded">
-        <img src="icon3.png" alt="Terpercaya" width="50" class="mb-3">
+        <img src="assets/trust.jpg" alt="Terpercaya" class="feature-icon">
         <h5>Terpercaya</h5>
         <p>Website informatif yang bisa kamu andalkan sebelum membeli HP.</p>
       </div>
@@ -152,7 +159,7 @@
 <div class="overlay" id="loginOverlay">
   <div class="custom-modal">
     <h2>Login terlebih dahulu</h2>
-    <a href="login_user.php" class="btn btn-login-normal">Login Akun Normal</a>
+    <a href="login_user.php" class="btn btn-login-normal">Login Akun User</a>
     <a href="login_admin.php" class="btn btn-login-dev">Login Akun Dev</a>
   </div>
 </div>

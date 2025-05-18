@@ -27,9 +27,10 @@ if (isset($_POST['login'])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #eef;
+           background-color: #343a40;
             text-align: center;
             padding-top: 100px;
+            
         }
         .login-box {
             background-color: white;
