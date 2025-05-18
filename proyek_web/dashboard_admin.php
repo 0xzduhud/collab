@@ -102,13 +102,13 @@ if (isset($_POST['update'])) {
             <?php while($row = mysqli_fetch_assoc($result)) : ?>
                 <tr>
                     <form method="POST">
-                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                        <input type="hidden" name="handphone_id" value="<?= $row['handphone_id'] ?>">
                         <td><input type="text" name="nama" class="form-control" value="<?= $row['nama'] ?>"></td>
                         <td><input type="number" name="harga" class="form-control" value="<?= $row['harga'] ?>"></td>
                         <td><input type="text" name="gambar" class="form-control" value="<?= $row['gambar'] ?>"></td>
                         <td>
                             <button type="submit" name="update" class="btn btn-warning btn-sm">Update</button>
-                            <a href="?hapus=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
+                            <a href="?hapus=<?= $row['handphone_id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
                         </td>
                     </form>
                 </tr>
