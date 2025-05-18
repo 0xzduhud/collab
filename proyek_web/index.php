@@ -123,7 +123,7 @@
 </head>
 <body background="assets/background.png">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
     <a class="navbar-brand" href="#">Gadget Finder</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -180,39 +180,45 @@
   </div>
 </div>
 
-<!-- SECTION TESTIMONI -->
+<!-- SECTION TESTIMONI (DIBAWAH FITUR) -->
 <div class="container my-5">
   <h2 class="text-center mb-4" id="testimoni">Apa Kata Mereka?</h2>
   <div class="row g-4 justify-content-center">
 
     <!-- Testimoni 1 -->
-    <div class="col-md-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card bg-dark text-white h-100">
-        <img src="assets/zduhud.jpg" class="card-img-top" alt="Foto User 1" style="object-fit: cover; height: 300px;">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Zduhud anjay mabar</h5>
+        <img src="assets/zduhud.jpg" class="card-img-top" alt="Foto User 1" style="object-fit: cover; height: 200px;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title mb-0">Zduhud Anjay</h5>
+          </div>
           <p class="card-text mt-2">"Situs ini membantu banget buat cari HP yang sesuai budget dan kebutuhan saya."</p>
         </div>
       </div>
     </div>
 
     <!-- Testimoni 2 -->
-    <div class="col-md-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card bg-dark text-white h-100">
-        <img src="assets/kanza.jpg" class="card-img-top" alt="Foto User 2" style="object-fit: cover; height: 300px;">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Kanza madagaskar</h5>
+        <img src="assets/kanza.jpg" class="card-img-top" alt="Foto User 2" style="object-fit: cover; height: 200px;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title mb-0">Kanza</h5>
+          </div>
           <p class="card-text mt-2">"Informasinya lengkap dan tampilannya mudah digunakan. Saya jadi bisa bandingin HP dengan cepat."</p>
         </div>
       </div>
     </div>
 
     <!-- Testimoni 3 -->
-    <div class="col-md-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card bg-dark text-white h-100">
-        <img src="assets/maul.jpg" class="card-img-top" alt="Foto User 3" style="object-fit: cover; height: 300px;">
-        <div class="card-body">
-          <h5 class="card-title mb-0">Maulana Ganteng</h5>
+        <img src="assets/maul.jpg" class="card-img-top" alt="Foto User 3" style="object-fit: cover; height: 200px;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title mb-0">Maulana</h5>
+          </div>
           <p class="card-text mt-2">"Sangat terbantu! Sekarang bisa lihat HP baru dan spesifikasinya tanpa harus keliling toko."</p>
         </div>
       </div>
@@ -220,6 +226,7 @@
 
   </div>
 </div>
+
 
 
 <!-- LOGIN OVERLAY -->
