@@ -27,40 +27,62 @@ if (isset($_POST['register'])) {
     <meta charset="UTF-8">
     <title>Register User</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #eef;
-            text-align: center;
-            padding-top: 100px;
+            background: url('assets/bg1.jpg');
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         .register-box {
-            background-color: white;
-            padding: 30px;
-            display: inline-block;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #aaa;
+            background: rgba(0, 0, 0, 0.6);
+            
+            padding: 40px;
+            border-radius: 15px;
+            width: 300px;
+            color: #fff;
+            
         }
         input[type="text"], input[type="password"] {
-            padding: 10px;
-            margin: 10px;
-            width: 80%;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            
         }
         button {
-            padding: 10px 20px;
-            margin-top: 10px;
+            
+            width: 100%;
+            padding: 12px;
+            background-color: #00cc99;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
         }
+        
+        
         .message {
             margin-top: 15px;
             color: green;
         }
         .error {
-            margin-top: 15px;
-            color: red;
+            color: #ff6666;
+            margin-top: 10px;
+            font-size: 14px;
         }
         a {
-            display: block;
+            
             margin-top: 15px;
-            text-decoration: none;
+            text-decoration: underline;
             color: #007BFF;
         }
     </style>
@@ -72,12 +94,12 @@ if (isset($_POST['register'])) {
         <form method="post" action="">
             <input type="text" name="username" placeholder="Username" required><br>
             <input type="password" name="password" placeholder="Password" required><br>
-            <button type="submit" name="register">Register</button>
+            <button type="submit" name="register">Register</button><br>
         </form>
         <?php 
             if (isset($success)) echo "<div class='message'>$success</div>"; 
             if (isset($error)) echo "<div class='error'>$error</div>"; 
-        ?>
+        ?><br>
         <a href="login_user.php">Sudah punya akun? Login di sini</a>
     </div>
 

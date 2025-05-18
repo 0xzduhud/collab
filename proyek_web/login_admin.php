@@ -25,28 +25,46 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <title>Login Admin</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-           background-color: #343a40;
-            text-align: center;
-            padding-top: 100px;
-            
+            background: url('assets/bg1.jpg');
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         .login-box {
-            background-color: white;
-            padding: 30px;
-            display: inline-block;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #aaa;
+            background: rgba(0, 0, 0, 0.6);
+            
+            padding: 40px;
+            border-radius: 15px;
+            width: 300px;
+            color: #fff;
+            
         }
         input[type="text"], input[type="password"] {
-            padding: 10px;
-            margin: 10px;
-            width: 80%;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            
         }
         button {
-            padding: 10px 20px;
-            margin-top: 10px;
+            
+            width: 100%;
+            padding: 12px;
+            background-color: #00cc99;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
         }
         .error {
             color: red;
