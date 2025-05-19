@@ -209,7 +209,7 @@
         <img src="assets/maul.jpg" class="card-img-top" alt="Foto User 3" style="object-fit: cover; height: 200px;">
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h5 class="card-title mb-0">Maulana</h5>
+            <h5 class="card-title mb-0">Maulana kalcer</h5>
           </div>
           <p class="card-text mt-2">"Sangat terbantu! Sekarang bisa lihat HP baru dan spesifikasinya tanpa harus keliling toko."</p>
         </div>
