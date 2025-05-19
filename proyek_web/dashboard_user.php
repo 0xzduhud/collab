@@ -80,6 +80,9 @@ $result = mysqli_query($conn, $query);
             <button class="btn btn-outline-warning" type="submit">Search</button>
           </form>
         </li>
+        <li class="nav-item">
+            <a href="logout.php" class="btn btn-outline-danger">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
