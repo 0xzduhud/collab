@@ -95,14 +95,6 @@
       opacity: 0.9;
     }
 
-.hero {
-  background-image: url('assets/background1.jpg'); /* Ini path dari index.php ke gambar */
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  padding: 100px 20px;
-  color: white;
-}
 .feature-icon {
   width: 60px;
   height: 60px;
@@ -191,7 +183,7 @@
         <img src="assets/zduhud.jpg" class="card-img-top" alt="Foto User 1" style="object-fit: cover; height: 200px;">
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h5 class="card-title mb-0">Zduhud Anjay</h5>
+            <h5 class="card-title mb-0">Zduhud gokgok</h5>
           </div>
           <p class="card-text mt-2">"Situs ini membantu banget buat cari HP yang sesuai budget dan kebutuhan saya."</p>
         </div>
@@ -204,7 +196,7 @@
         <img src="assets/kanza.jpg" class="card-img-top" alt="Foto User 2" style="object-fit: cover; height: 200px;">
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
-            <h5 class="card-title mb-0">Kanza</h5>
+            <h5 class="card-title mb-0">Kanza icikiwir</h5>
           </div>
           <p class="card-text mt-2">"Informasinya lengkap dan tampilannya mudah digunakan. Saya jadi bisa bandingin HP dengan cepat."</p>
         </div>
