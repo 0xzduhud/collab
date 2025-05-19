@@ -1,7 +1,7 @@
 <?php
-session_start();
-include "koneksi.php";
 
+include "koneksi.php";
+session_start();
 if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -11,10 +11,11 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
+        $_SESSION["login"] = true;
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['username'] = $username;
-        header("Location: dashboard_user.php");
-        exit();
+        header("location: dashboard_user.php");
+        exit;
     } else {
         $error = "Username atau password salah!";
     }
@@ -99,7 +100,7 @@ if (isset($_POST['login'])) {
     <form method="post" action="">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button type="submit" name="login">Login</button>
+        <button type="submit" value="login" name="login">Login</button>
     </form>
     <a href="register.php" class="register-link">Belum punya akun? Daftar di sini</a>
     <?php if (isset($error)) echo "<div class='error'>$error</div>"; ?>

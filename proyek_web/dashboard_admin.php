@@ -28,7 +28,7 @@ if (isset($_GET['hapus'])) {
 
 // Update data
 if (isset($_POST['update'])) {
-    $id = $_POST['id'];
+    $id = $_POST['handphone_id'];
     $nama = $_POST['nama'];
     $harga = $_POST['harga'];
     $gambar = $_POST['gambar'];
@@ -38,7 +38,7 @@ if (isset($_POST['update'])) {
     $kapasitasbatre = $_POST['kapasitasbatre'];
     $os = $_POST['os'];
     $ukuran_refresh = $_POST['ukuran_refresh'];
-    mysqli_query($conn, "UPDATE produk_hp SET nama='$nama', harga='$harga', gambar='$gambar', merk='$merk' , chipset='$chipset' , ram_rom='$ram_rom' , kapasitasbatre='$kapasitasbatre' , os='$os' , ukuran_refreshrate='$ukuran_refresh' WHERE id=$id");
+    mysqli_query($conn, "UPDATE produk_hp SET nama='$nama', harga='$harga', gambar='$gambar', merk='$merk' , chipset='$chipset' , ram_rom='$ram_rom' , kapasitasbatre='$kapasitasbatre' , os='$os' , ukuran_refreshrate='$ukuran_refresh' WHERE handphone_id=$id");
     header("Location: dashboard_admin.php");
 }
 ?>
