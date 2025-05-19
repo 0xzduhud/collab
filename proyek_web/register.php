@@ -11,6 +11,7 @@ if (isset($_POST['register'])) {
         $error = "Username sudah digunakan, silakan pilih yang lain.";
     } else {
         // Simpan ke database
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         if (mysqli_query($conn, $query)) {
             $success = "Registrasi berhasil! Silakan login.";
