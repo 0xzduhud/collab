@@ -1,6 +1,11 @@
 <?php
-require 'koneksi.php';
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login_user.php");
+    exit();
+}
 
+require 'koneksi.php';
 // Ambil parameter GET dan bersihkan
 $keyword = strtolower(trim($_GET['keyword'] ?? ''));
 $brand = strtolower(trim($_GET['brand'] ?? ''));
