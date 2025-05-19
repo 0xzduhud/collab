@@ -1,9 +1,14 @@
+<?php
+include 'koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <title>Beranda | Gadget Finder</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
       background-color: #343a40;
@@ -171,6 +176,49 @@
     </div>
   </div>
 </div>
+
+<section class="produk-unggulan py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Kolom kiri: Judul -->
+      <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+        <h2 class="fw-bold">Produk Unggulan</h2>
+      </div>
+
+      <!-- Kolom kanan: Carousel -->
+      <div class="col-md-8">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <div class="carousel-inner">
+            <?php
+            $query = "SELECT * FROM produk_hp LIMIT 4";
+            $result = mysqli_query($conn, $query);
+            $isActive = true;
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+              <div class="carousel-item <?= $isActive ? 'active' : '' ?>">
+                <div class="d-flex justify-content-center">
+                  <div class="card" style="width: 18rem;">
+                    <img src="assets/<?= $row['gambar'] ?>" class="card-img-top" alt="<?= $row['nama'] ?>">
+                    <div class="card-body text-center">
+                      <h5 class="card-title"><?= $row['nama'] ?></h5>
+                      <p class="card-text"><?= $row['merk'] ?> Rp<?= number_format($row['harga'], 0, ',', '.') ?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php
+              $isActive = false;
+            }
+            ?>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- SECTION TESTIMONI (DIBAWAH FITUR) -->
 <div class="container my-5">
