@@ -11,6 +11,7 @@ if (isset($_POST['login'])) {
 
     if (mysqli_num_rows($result) == 1) {
         $_SESSION['admin'] = $username;
+        $_SESSION["login"] = true;
         header("Location: dashboard_admin.php");
         exit();
     } else {

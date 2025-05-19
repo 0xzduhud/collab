@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login_admin.php");
+    exit();
+}
 require 'koneksi.php';
 
 // Ambil data dari tabel
@@ -95,6 +101,12 @@ if (isset($_POST['update'])) {
                 <th>Nama</th>
                 <th>Harga</th>
                 <th>Gambar</th>
+                <th>Merk</th>
+                <th>Chipset</th>
+                <th>Ram_Rom</th>
+                <th>kapasitas batre</th>
+                <th>OS</th>
+                <th>ukuran_refreshrate</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -106,6 +118,12 @@ if (isset($_POST['update'])) {
                         <td><input type="text" name="nama" class="form-control" value="<?= $row['nama'] ?>"></td>
                         <td><input type="number" name="harga" class="form-control" value="<?= $row['harga'] ?>"></td>
                         <td><input type="text" name="gambar" class="form-control" value="<?= $row['gambar'] ?>"></td>
+                        <td><input type="text" name="merk" class="form-control" value="<?= $row['merk'] ?>"></td>
+                        <td><input type="text" name="chipset" class="form-control" value="<?= $row['chipset'] ?>"></td>
+                        <td><input type="text" name="ram_rom" class="form-control" value="<?= $row['ram_rom'] ?>"></td>
+                        <td><input type="text" name="kapasitasbatre" class="form-control" value="<?= $row['kapasitasbatre'] ?>"></td>
+                        <td><input type="text" name="os" class="form-control" value="<?= $row['os'] ?>"></td>
+                        <td><input type="text" name="ukuran_refresh" class="form-control" value="<?= $row['ukuran_refreshrate'] ?>"></td>
                         <td>
                             <button type="submit" name="update" class="btn btn-warning btn-sm">Update</button>
                             <a href="?hapus=<?= $row['handphone_id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
