@@ -40,12 +40,15 @@ $hp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM produk_hp WHERE hand
 
     <!-- Form Komentar -->
     <?php if (isset($_SESSION['user_id'])): ?>
-    <form action="tambah_diskusi.php" method="POST" class="mb-4">
-        <input type="hidden" name="handphone_id" value="<?= $hp['handphone_id'] ?>">
-        <div class="mb-3">
-            <textarea name="isi" class="form-control" rows="3" placeholder="Tulis komentar..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Kirim</button>
+    <form action="tambah_diskusi.php" method="POST" enctype="multipart/form-data" class="mb-4">
+    <input type="hidden" name="handphone_id" value="<?= $hp['handphone_id'] ?>">
+    <div class="mb-3">
+        <textarea name="isi" class="form-control" rows="3" placeholder="Tulis komentar..." required></textarea>
+    </div>
+    <div class="mb-3">
+        <input type="file" name="gambar_komentar" class="form-control" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Kirim</button>
     </form>
     <?php else: ?>
     <div class="alert alert-warning">Silakan login untuk ikut berdiskusi.</div>
@@ -59,6 +62,10 @@ $hp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM produk_hp WHERE hand
             <div class="card-body">
                 <h6 class="card-subtitle mb-1 text-muted"><?= $d['username'] ?> - <?= $d['created_at'] ?></h6>
                 <p class="card-text"><?= nl2br(htmlspecialchars($d['isi'])) ?></p>
+
+                <?php if (!empty($d['gambar_komentar'])): ?>
+                <img src="uploads_komentar/<?= htmlspecialchars($d['gambar_komentar']) ?>" class="img-fluid mt-2" style="max-height:200px;" alt="Komentar gambar">
+            <?php endif; ?>
             </div>
         </div>
     <?php endwhile; ?>
