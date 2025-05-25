@@ -77,7 +77,7 @@ $result = mysqli_query($conn, $query);
         .card-img-top {
             height: 220px;
             object-fit: contain;
-            background-color: #fff;
+            background-color: transparent;
             padding: 15px;
         }
         .filter-box {
@@ -94,6 +94,7 @@ $result = mysqli_query($conn, $query);
         }
         .product-title {
             font-weight: 600;
+            color: #fff;
         }
         .text-light-muted {
             color: #ccc;
@@ -102,28 +103,7 @@ $result = mysqli_query($conn, $query);
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-warning" href="dashboard_user.php">Gadget Finder</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-      <ul class="navbar-nav mb-2 mb-lg-0 gap-2">
-        <li class="nav-item">
-          <form class="d-flex" method="GET" action="">
-            <input class="form-control me-2" type="search" placeholder="Cari HP..." name="keyword" value="<?= htmlspecialchars($keyword) ?>">
-            <button class="btn btn-warning" type="submit">Cari</button>
-          </form>
-        </li>
-        <li class="nav-item">
-          <a href="logout.php" class="btn btn-outline-light">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php include 'navbar.php'; ?>
 
 <div class="container my-4">
     <h2 class="text-center section-title">Rekomendasi HP Terbaik</h2>

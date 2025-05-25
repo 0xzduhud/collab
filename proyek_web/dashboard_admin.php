@@ -57,6 +57,7 @@ if (isset($_POST['update'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
+    <?php include 'navbar.php'; ?>
 
 <div class="container my-4">
     <h2 class="mb-4">Dashboard Admin</h2>
