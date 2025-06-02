@@ -3,15 +3,19 @@ include "koneksi.php";
 
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    // Cek apakah username sudah digunakan
+    $password = $_POST['password']; // jangan pakai mysqli_real_escape_string di password
+    
+   
     $check = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
     if (mysqli_num_rows($check) > 0) {
         $error = "Username sudah digunakan, silakan pilih yang lain.";
     } else {
-        // Simpan ke database
-        $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+        
+        $query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
+        
         if (mysqli_query($conn, $query)) {
             $success = "Registrasi berhasil! Silakan login.";
         } else {
@@ -19,6 +23,7 @@ if (isset($_POST['register'])) {
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
