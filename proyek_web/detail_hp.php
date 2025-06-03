@@ -11,7 +11,9 @@ $hp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM produk_hp WHERE hand
 <head>
     <meta charset="UTF-8">
     <title>Detail HP - <?= $hp['nama'] ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
     <style>
         body {
             background-color: #000;
@@ -55,14 +57,36 @@ $hp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM produk_hp WHERE hand
             <div class="col-md-8">
                 <div class="ps-3">
                     <h3><?= $hp['nama'] ?></h3>
-                    <p><strong>Harga:</strong> Rp<?= number_format($hp['harga']) ?></p>
-                    <p><strong>Merk:</strong> <?= $hp['merk'] ?></p>
-                    <p><strong>Chipset:</strong> <?= $hp['chipset'] ?></p>
-                    <p><strong>RAM/ROM:</strong> <?= $hp['ram_rom'] ?></p>
-                    <p><strong>Baterai:</strong> <?= $hp['kapasitasbatre'] ?></p>
-                    <p><strong>OS:</strong> <?= $hp['os'] ?></p>
-                    <p><strong>Layar:</strong> <?= $hp['ukuran_refreshrate'] ?></p>
+                    <div class="border-bottom py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">Harga:</strong>
+                        <span class="ps-3 flex-grow-1">Rp<?= number_format($hp['harga']) ?></span>
+                    </div>
+                    <div class="border-bottom py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">Merk:</strong>
+                        <span class="ps-3 flex-grow-1"><?= $hp['merk'] ?></span>
+                    </div>
+                    <div class="border-bottom py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">Chipset:</strong>
+                        <span class="ps-3 flex-grow-1"><?= $hp['chipset'] ?></span>
+                    </div>
+                    <div class="border-bottom py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">RAM/ROM:</strong>
+                        <span class="ps-3 flex-grow-1"><?= $hp['ram_rom'] ?></span>
+                    </div>
+                    <div class="border-bottom py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">Baterai:</strong>
+                        <span class="ps-3 flex-grow-1"><?= $hp['kapasitasbatre'] ?></span>
+                    </div>
+                    <div class="border-bottom py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">OS:</strong>
+                        <span class="ps-3 flex-grow-1"><?= $hp['os'] ?></span>
+                    </div>
+                    <div class="py-2 d-flex">
+                        <strong style="border-right:1px solid #555; min-width:120px;">Layar:</strong>
+                        <span class="ps-3 flex-grow-1"><?= $hp['ukuran_refreshrate'] ?></span>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

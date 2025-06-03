@@ -38,15 +38,13 @@ $result = mysqli_query($conn, $query);
     <title>Gadget Finder - Rekomendasi HP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <style>
+        
         body {
             background-color: #0d0d0d;
             font-family: 'Inter', sans-serif;
             color: #fff;
-        }
-        .navbar {
-            background-color: #111;
-            border-bottom: 1px solid #222;
         }
         .form-control, .form-select {
             background-color: #1a1a1a;
@@ -99,6 +97,11 @@ $result = mysqli_query($conn, $query);
         .text-light-muted {
             color: #ccc;
         }
+        .navbar {
+  background-color: #111 !important;
+  border-bottom: 1px solid #222 !important;
+  font-family: 'Inter', sans-serif !important;
+}
     </style>
 </head>
 <body>
@@ -106,7 +109,7 @@ $result = mysqli_query($conn, $query);
 <?php include 'navbar.php'; ?>
 
 <div class="container my-4">
-    <h2 class="text-center section-title">Rekomendasi HP Terbaik</h2>
+    <h2 class="text-center section-title mb-4">Cari Hp Terbaik Anda</h2>
     <form method="GET" class="row g-3 filter-box">
         <div class="col-md-3">
             <label for="brand" class="form-label">Merek:</label>
@@ -122,11 +125,11 @@ $result = mysqli_query($conn, $query);
         </div>
         <div class="col-md-2">
             <label class="form-label">Harga Min:</label>
-            <input type="number" name="min_harga" class="form-control" placeholder="1.000.000" value="<?= htmlspecialchars($min_harga) ?>">
+            <input type="number" name="min_harga" class="form-control" placeholder="" value="<?= htmlspecialchars($min_harga) ?>">
         </div>
         <div class="col-md-2">
             <label class="form-label">Harga Max:</label>
-            <input type="number" name="max_harga" class="form-control" placeholder="10.000.000" value="<?= htmlspecialchars($max_harga === PHP_INT_MAX ? '' : $max_harga) ?>">
+            <input type="number" name="max_harga" class="form-control" placeholder="" value="<?= htmlspecialchars($max_harga === PHP_INT_MAX ? '' : $max_harga) ?>">
         </div>
         <div class="col-md-3">
             <label class="form-label">Urutkan:</label>

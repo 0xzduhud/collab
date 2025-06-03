@@ -21,8 +21,8 @@ include 'koneksi.php';
       padding: 100px 20px;
       text-align: center;
       background: 
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-        url('assets/hero-bg-soft.jpg') center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+        
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
@@ -30,28 +30,23 @@ include 'koneksi.php';
     .hero h1 {
       font-size: 3.5rem;
       font-weight: 700;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
 
     .hero p {
       font-size: 1.4rem;
       margin: 20px 0 30px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
-
-    /* Tombol tanpa shadow */
     .cta-button {
       font-size: 1.25rem;
       padding: 12px 36px;
       border-radius: 50px;
-      box-shadow: none !important;
-      transition: background-color 0.3s ease;
+      transition: 0.3s ease;
     }
     .cta-button:hover {
       background-color: #084298;
       color: #fff;
     }
-
+    /* buat overlay */
     .overlay {
       position: fixed;
       top: 0; left: 0;
@@ -92,7 +87,6 @@ include 'koneksi.php';
       padding: 12px 28px;
       font-size: 1.1rem;
       border-radius: 50px;
-      box-shadow: 0 4px 10px rgba(13,110,253,0.6);
       transition: opacity 0.3s ease;
     }
     .custom-modal .btn:hover {
@@ -104,7 +98,7 @@ include 'koneksi.php';
       color: white;
     }
 
-    /* Keunggulan fitur */
+    /* style buat keunggulan fitur */
     .feature-icon {
       width: 60px;
       height: 60px;
@@ -125,10 +119,9 @@ include 'koneksi.php';
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
-    /* Produk Unggulan */
+    /* style buat produk unggulan */
     .produk-unggulan {
       padding: 40px 0;
-      background: linear-gradient(135deg, #111827, #1f2937);
       border-radius: 12px;
       color: white;
       margin-bottom: 50px;
@@ -170,7 +163,7 @@ include 'koneksi.php';
       text-align: center;
     }
 
-    /* Testimoni cards */
+    /* bagian testimoni */
     .card.bg-dark.text-white.h-100 {
       background-color: #1e293b !important;
       border-radius: 12px;
@@ -186,9 +179,9 @@ include 'koneksi.php';
       border-top-right-radius: 12px;
     }
 
-    /* Footer */
+    /* footer */
     footer.bg-dark.text-white.text-center.py-4.mt-5 {
-      background: linear-gradient(135deg, #111827, #1f2937);
+      background: linear-gradient(135deg,rgb(0, 3, 10),rgb(0, 3, 10));
       font-size: 0.9rem;
       letter-spacing: 0.02em;
     }
@@ -230,7 +223,7 @@ include 'koneksi.php';
       <div class="bg-dark p-4 rounded">
         <img src="assets/cepat.png" alt="Cepat" class="feature-icon">
         <h5>Cepat dan Mudah</h5>
-        <p>Temukan HP idamanmu hanya dalam beberapa klik.</p>
+        <p>Cari dan temukan HP idamanmu hanya dalam beberapa klik. </p>
       </div>
     </div>
     <div class="col-md-4 mb-4">

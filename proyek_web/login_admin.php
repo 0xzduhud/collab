@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "koneksi.php"; // Pastikan file koneksi sudah benar
+include "koneksi.php";
 
 if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -32,7 +32,6 @@ if (isset($_POST['login'])) {
         body {
             background: url('assets/bg1.jpg');
             background-size: cover;
-            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -41,7 +40,6 @@ if (isset($_POST['login'])) {
         }
         .login-box {
             background: rgba(0, 0, 0, 0.6);
-            
             padding: 40px;
             border-radius: 15px;
             width: 300px;
@@ -58,13 +56,10 @@ if (isset($_POST['login'])) {
             
         }
         button {
-            
             width: 100%;
             padding: 12px;
             background-color: #00cc99;
             color: white;
-            border: none;
-            border-radius: 8px;
             font-weight: bold;
         }
         .error {

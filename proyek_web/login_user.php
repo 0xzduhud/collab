@@ -34,8 +34,6 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <title>Login User</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;

@@ -29,7 +29,7 @@ if (isset($_POST['tambah'])) {
 // Hapus data
 if (isset($_GET['hapus'])) {
     $id = $_GET['hapus'];
-    mysqli_query($conn, "DELETE FROM produk_hp WHERE id = $id");
+    mysqli_query($conn, "DELETE FROM produk_hp WHERE handphone_id = $id");
     header("Location: dashboard_admin.php");
 }
 
@@ -55,6 +55,9 @@ if (isset($_POST['update'])) {
 <head>
     <title>Dashboard Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+
 </head>
 <body class="bg-dark text-white">
     <?php include 'navbar.php'; ?>

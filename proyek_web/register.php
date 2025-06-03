@@ -3,7 +3,7 @@ include "koneksi.php";
 
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = $_POST['password']; // jangan pakai mysqli_real_escape_string di password
+    $password = $_POST['password'];
     
    
     $check = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
